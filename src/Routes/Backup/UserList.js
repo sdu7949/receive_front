@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from "react-router-dom";
+import {user} from "./UserData.json";
 import MaterialTable from 'material-table';
 
 import { forwardRef } from 'react';
@@ -17,10 +19,9 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-// import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 
-export default function UserTable(props) {
-
+function UserList({match}){
 
     const tableIcons = {
         Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -42,18 +43,16 @@ export default function UserTable(props) {
         ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
     };
 
-
-    // const [state, setState] = React.useState({
-    const [state] = React.useState({
+    const [state,setState] = React.useState({
         columns: [
             { title: '닉네임', field: 'nickname' },
+            { title: '지갑 주소', field: 'walletAddress' },
             { title: '식별 번호', field: 'id' },
-            { title: '환전 신청 코인', field: 'exchangeCoin' },
-            { title: '송금 여부', field: 'sendMoney' },
-            { title: '은행', field: 'bank' },
-            { title: '계좌번호', field: 'accountNumber' },
-            { title: '출금 예정 금액', field: 'withdrawMoney' },
-            { title: '환전승인', field: 'exchangeApproval' },
+            { title: '투자 금액', field: 'investment' },
+            { title: '보유 KeepIn', field: 'keepIn' },
+            { title: '만기일', field: 'dueDate' },
+            { title: '신고 횟수', field: 'report' },
+            { title: '동결', field: 'freeze' },
             //   { title: 'Birth Year', field: 'birthYear', type: 'numeric' }, 오른쪽 정렬
             //   {
             //     title: 'Birth Place',
@@ -61,64 +60,13 @@ export default function UserTable(props) {
             //     lookup: { 34: 'İstanbul', 63: 'Şanlıurfa' },
             //   },
         ],
-        data: [
-            {
-                id: 1,
-                nickname: '브룩',
-                exchangeCoin: "100000원",
-                sendMoney: '코인 반환 대기',
-                bank: "국민",
-                accountNumber: "110-133-111111",
-                withdrawMoney: "999,100원",
-                exchangeApproval: "승인하기"
-            },
-            {
-                id: 2,
-                nickname: '사보',
-                exchangeCoin: "100000원",
-                sendMoney: '코인 반환 완료',
-                bank: "국민",
-                accountNumber: "110-133-111111",
-                withdrawMoney: "999,100원",
-                exchangeApproval: "승인하기"
-            },
-            {
-                id: 3,
-                nickname: '루치',
-                exchangeCoin: "100000원",
-                sendMoney: '코인 반환 대기',
-                bank: "국민",
-                accountNumber: "110-133-1222211",
-                withdrawMoney: "999,100원",
-                exchangeApproval: "승인하기"
-            },
-            {
-                id: 4,
-                nickname: '로디언즈',
-                exchangeCoin: "100000원",
-                sendMoney: '코인 반환 대기',
-                bank: "국민",
-                accountNumber: "110-133-111111",
-                withdrawMoney: "999,100원",
-                exchangeApproval: "승인하기"
-            },
-        ],
+        data:[]
+
     });
 
-     const handleSubmit = (rowData) => {
-        // console.log(rowData.id);
-        props.history.push(`/user/${rowData.id}`, {
-                id : rowData.id ,
-                nickname: rowData.nickname,
-                exchangeCoin: rowData.exchangeCoin,
-                sendMoney: rowData.sendMoney,
-                bank: rowData.bank,
-                accountNumber: rowData.accountNumber,
-                withdrawMoney: rowData.withdrawMoney,
-                exchangeApproval: rowData.exchangeApproval
-        });
-        // console.log(props.history);
-       
+    const handleSubmit = (id) => {
+        console.log(id)
+        
     }
 
     return (

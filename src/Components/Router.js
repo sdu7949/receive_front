@@ -18,10 +18,10 @@ export default () => (
       <Route path="/user" exact component={User} />
       <Route path="/user/:id" component={Detail} /> 
       <Route path="/purchasing" exact component={Purchasing} />
-      {/* <Route path="/purchasing/:id" component={Detail} /> */}
+      <Route path="/purchasing/:id" component={Detail} />
       <Route path="/exchange" exact component={Exchange} />
-      {/* <Route path="/exchange/:id" component={Detail} /> */}
-      <Redirect from="*" to="/" />
+      <Route path="/exchange/:id" component={Detail} />
+      <Redirect from="*" to="/" /> 
     </Switch>
     </>
   </Router>

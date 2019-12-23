@@ -1,7 +1,5 @@
 import React from "react";
 import MaterialTable from 'material-table';
-import { Link } from "react-router-dom";
-
 
 import { forwardRef } from 'react';
 import AddBox from '@material-ui/icons/AddBox';
@@ -19,9 +17,9 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 
-export default function UserTable() {
+export default function UserTable(props) {
 
 
     const tableIcons = {
@@ -46,7 +44,7 @@ export default function UserTable() {
 
 
     // const [state, setState] = React.useState({
-    const [state,setState] = React.useState({
+    const [state] = React.useState({
         columns: [
             { title: '닉네임', field: 'nickname' },
             { title: '지갑 주소', field: 'walletAddress' },
@@ -159,13 +157,24 @@ export default function UserTable() {
 
     });
 
-
     
 
-    const handleSubmit = (id) => {
-        console.log(`plz`);
-        // console.log(`id:${id}`)
-        console.log(id);
+
+
+     const handleSubmit = (rowData) => {
+        // console.log(rowData.id);
+        props.history.push(`/user/${rowData.id}`, {
+                id : rowData.id ,
+                nickname: rowData.nickname,
+                walletAddress: rowData.walletAddress,
+                investment: rowData.investment,
+                keepIn: rowData.keepIn,
+                dueDate: rowData.dueDate,
+                report: rowData.report,
+                freeze: rowData.freeze
+        });
+        // console.log(props.history);
+       
     }
 
     return (
@@ -175,7 +184,7 @@ export default function UserTable() {
                 icons={tableIcons}
                 columns={state.columns}
                 data={state.data}
-                onRowClick={() => handleSubmit(state.data.id)}
+                onRowClick={(_, rowData) => handleSubmit(rowData)}
             // onRowClick={(event, rowData, togglePanel) => togglePanel()}
             />
         </div>
