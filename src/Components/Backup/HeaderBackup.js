@@ -53,7 +53,7 @@ export default withRouter(({location : {pathname}}) =>(
             <Item current = {pathname === "/"}>
                 <SLink to="/">로그인</SLink>
             </Item>
-            {/* <Item current = {pathname === "/user"}>
+            <Item current = {pathname === "/user"}>
                 <SLink to="/user">회원 목록</SLink>
             </Item>
             <Item current = {pathname === "/purchasing"}>
@@ -61,7 +61,7 @@ export default withRouter(({location : {pathname}}) =>(
             </Item>
             <Item current = {pathname === "/exchange"}>
                 <SLink to="/exchange">환전 신청 목록</SLink>
-            </Item> */}
+            </Item>
             
         </List>
     </Header>

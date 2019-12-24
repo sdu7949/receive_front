@@ -83,7 +83,7 @@ export default function SignIn() {
             id="password"
             autoComplete="current-password"
           />
-          {/* <FormControlLabel           //19.12.23 루치 - 아이디를 기억해서 자동으로 띄워주는 태그
+          {/* <FormControlLabel           // 아이디를 기억해서 자동으로 띄워주는 태그
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           /> */}
@@ -96,13 +96,13 @@ export default function SignIn() {
           >
             Sign In
           </Button>
-          {/* <Grid container>         //19.12.23 루치 - 비번 잃어버렸을때 눌러서 찾는 기능
+          {/* <Grid container>         // 비번 잃어버렸을때 눌러서 찾는 기능
             <Grid item xs>
               <Link href="#" variant="body2">
                 Forgot password?
               </Link>
             </Grid>
-            <Grid item>                   //19.12.23 루치 - 계정 생성 기능
+            <Grid item>                   // 계정 생성 기능
               <Link href="#" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>

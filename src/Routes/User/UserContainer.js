@@ -1,6 +1,6 @@
 import React from "react";
 import MaterialTable from 'material-table';
-
+//-----------------------table, react import--------------------
 import { forwardRef } from 'react';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -17,7 +17,7 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-// import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 
 export default function UserTable(props) {
 
@@ -46,14 +46,80 @@ export default function UserTable(props) {
     // const [state, setState] = React.useState({
     const [state] = React.useState({
         columns: [
-            { title: '닉네임', field: 'nickname' },
-            { title: '지갑 주소', field: 'walletAddress' },
-            { title: '식별 번호', field: 'id' },
-            { title: '투자 금액', field: 'investment' },
-            { title: '보유 KeepIn', field: 'keepIn' },
-            { title: '만기일', field: 'dueDate' },
-            { title: '신고 횟수', field: 'report' },
-            { title: '동결', field: 'freeze' },
+            {
+                title: '닉네임', field: 'nickname',
+                cellStyle: {
+                    textAlign: 'center'
+                },
+                headerStyle: {
+                    width: `150px`,
+                    paddingLeft: `75px`
+                }
+            },
+            {
+                title: '지갑 주소', field: 'walletAddress',
+                cellStyle: {
+                    textAlign: 'center'
+                },
+                headerStyle: {
+                    width: `150px`,
+                    paddingLeft: `67px`
+                }
+            },
+            {
+                title: '식별 번호', field: 'id',
+                cellStyle: {
+                    textAlign: 'center'
+                },
+                headerStyle: {
+                    width: `150px`,
+                    paddingLeft: `67px`
+                }
+            },
+            {
+                title: '투자 금액', field: 'investment',
+                cellStyle: {
+
+                    textAlign: 'center'
+                },
+                headerStyle: {
+                    width: `150px`,
+                    paddingLeft: `65px`
+                }
+            },
+            {
+                title: '보유 KeepIn', field: 'keepIn',
+                cellStyle: {
+
+                    textAlign: 'center'
+                },
+                headerStyle: {
+                    width: `180px`,
+                    paddingLeft: `75px`
+                }
+            },
+            {
+                title: '만기일', field: 'dueDate',
+                cellStyle: {
+
+                    textAlign: 'center'
+                },
+                headerStyle: {
+                    width: `160px`,
+                    paddingLeft: `80px`
+                }
+            },
+            {
+                title: '신고 횟수', field: 'report',
+                cellStyle: {
+
+                    textAlign: `center`
+                },
+                headerStyle: {
+                    width: `150px`,
+                    paddingLeft: `70px`
+                }
+            },
             //   { title: 'Birth Year', field: 'birthYear', type: 'numeric' }, 오른쪽 정렬
             //   {
             //     title: 'Birth Place',
@@ -157,24 +223,24 @@ export default function UserTable(props) {
 
     });
 
-    
 
 
 
-     const handleSubmit = (rowData) => {
+
+    const handleSubmit = (rowData) => {
         // console.log(rowData.id);
         props.history.push(`/user/${rowData.id}`, {
-                id : rowData.id ,
-                nickname: rowData.nickname,
-                walletAddress: rowData.walletAddress,
-                investment: rowData.investment,
-                keepIn: rowData.keepIn,
-                dueDate: rowData.dueDate,
-                report: rowData.report,
-                freeze: rowData.freeze
+            id: rowData.id,
+            nickname: rowData.nickname,
+            walletAddress: rowData.walletAddress,
+            investment: rowData.investment,
+            keepIn: rowData.keepIn,
+            dueDate: rowData.dueDate,
+            report: rowData.report,
+            freeze: rowData.freeze
         });
         // console.log(props.history);
-       
+
     }
 
     return (
@@ -185,8 +251,44 @@ export default function UserTable(props) {
                 columns={state.columns}
                 data={state.data}
                 onRowClick={(_, rowData) => handleSubmit(rowData)}
-            // onRowClick={(event, rowData, togglePanel) => togglePanel()}
+                // columns={[
+                //     {
+                //         title: '식별 번호', field: 'id',
+                //         cellStyle: {
+                //             backgroundColor: 'red'
+                //         }
+                //     }
+                // ]}
+                // onRowClick={(event, rowData, togglePanel) => togglePanel()}
+
+
+                actions={[
+                    {
+                        icon: "save",
+                        tooltip: '동결하기',
+                        onClick: (event, rowData) => {
+                            alert(rowData.nickname + "님 동결하기");
+                            event.stopPropagation();
+                        }
+                    }
+                ]}
+                components={{
+                    Action: props => (
+                        <Button
+                            // onClick={(event) => props.action.onClick(event, props.data)}
+                            onClick={(event) => props.action.onClick(event, props.data)}
+                            color="primary"
+                            variant="contained"
+                            style={{ textTransform: 'none' }}
+                            size="small"
+                        >
+                            동결
+                  </Button>
+                    ),
+                }}
+
             />
+
         </div>
     );
 }

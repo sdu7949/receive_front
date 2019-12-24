@@ -17,7 +17,7 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-// import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 
 export default function UserTable(props) {
 
@@ -107,7 +107,7 @@ export default function UserTable(props) {
 
      const handleSubmit = (rowData) => {
         // console.log(rowData.id);
-        props.history.push(`/user/${rowData.id}`, {
+        props.history.push(`/exchange/${rowData.id}`, {
                 id : rowData.id ,
                 nickname: rowData.nickname,
                 exchangeCoin: rowData.exchangeCoin,
@@ -130,6 +130,30 @@ export default function UserTable(props) {
                 data={state.data}
                 onRowClick={(_, rowData) => handleSubmit(rowData)}
             // onRowClick={(event, rowData, togglePanel) => togglePanel()}
+            actions={[
+                {
+                    icon: "save",
+                    tooltip: '승인하기',
+                    onClick: (event, rowData) => {
+                        alert(rowData.nickname + "님 승인하기");
+                        event.stopPropagation();
+                    }
+                }
+            ]}
+            components={{
+                Action: props => (
+                    <Button
+                        // onClick={(event) => props.action.onClick(event, props.data)}
+                        onClick={(event) => props.action.onClick(event, props.data)}
+                        color="primary"
+                        variant="contained"
+                        style={{ textTransform: 'none' }}
+                        size="small"
+                    >
+                        승인
+              </Button>
+                ),
+            }}
             />
         </div>
     );
