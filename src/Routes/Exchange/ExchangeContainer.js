@@ -93,7 +93,8 @@ export default function UserTable(props) {
         headerStyle: {
           width: `150px`,
           paddingLeft: `65px`
-        }
+        },
+        searchable: false
       },
       {
         title: "은행",
@@ -104,7 +105,8 @@ export default function UserTable(props) {
         headerStyle: {
           width: `150px`,
           paddingLeft: `80px`
-        }
+        },
+        searchable: false
       },
       {
         title: "계좌번호",
@@ -115,7 +117,8 @@ export default function UserTable(props) {
         headerStyle: {
           width: `200px`,
           paddingLeft: `90px`
-        }
+        },
+        searchable: false
       },
       {
         title: "출금 예정 금액",
@@ -126,7 +129,8 @@ export default function UserTable(props) {
         headerStyle: {
           width: `170px`,
           paddingLeft: `55px`
-        }
+        },
+        searchable: false
       }
       // { title: '환전승인', field: 'exchangeApproval' },
       //   { title: 'Birth Year', field: 'birthYear', type: 'numeric' }, 오른쪽 정렬

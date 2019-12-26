@@ -93,7 +93,8 @@ export default function UserTable(props) {
         headerStyle: {
           width: `200px`,
           paddingLeft: `90px`
-        }
+        },
+        searchable: false
       },
       {
         title: "전송 예정 코인",
@@ -104,7 +105,8 @@ export default function UserTable(props) {
         headerStyle: {
           width: `200px`,
           paddingLeft: `90px`
-        }
+        },
+        searchable: false
       }
       // { title: '승인하기', field: 'approval' },
       //   { title: 'Birth Year', field: 'birthYear', type: 'numeric' }, numeric은 오른쪽 정렬

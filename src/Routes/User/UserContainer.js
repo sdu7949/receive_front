@@ -93,7 +93,8 @@ export default function UserTable(props) {
         headerStyle: {
           width: `150px`,
           paddingLeft: `65px`
-        }
+        },
+        searchable: false
       },
       {
         title: "보유 KeepIn",
@@ -104,7 +105,8 @@ export default function UserTable(props) {
         headerStyle: {
           width: `180px`,
           paddingLeft: `75px`
-        }
+        },
+        searchable: false
       },
       {
         title: "만기일",
@@ -115,7 +117,8 @@ export default function UserTable(props) {
         headerStyle: {
           width: `160px`,
           paddingLeft: `80px`
-        }
+        },
+        searchable: false
       },
       {
         title: "신고 횟수",
@@ -126,7 +129,8 @@ export default function UserTable(props) {
         headerStyle: {
           width: `150px`,
           paddingLeft: `70px`
-        }
+        },
+        searchable: false
       }
       //   { title: 'Birth Year', field: 'birthYear', type: 'numeric' }, 오른쪽 정렬
       //   {
@@ -139,8 +143,8 @@ export default function UserTable(props) {
       {
         id: 1,
         nickname: "브룩",
-        walletAddress: "0x123awsw123",
-        investment: "100000원",
+        walletAddress: "0xbrook",
+        investment: "3210000원",
         keepIn: "1222222원",
         dueDate: "2020-10-10",
         report: "0회",
@@ -149,9 +153,9 @@ export default function UserTable(props) {
       {
         id: 2,
         nickname: "사보",
-        walletAddress: "0x123awsw123",
+        walletAddress: "0xsabo",
         investment: "100000원",
-        keepIn: "1222222원",
+        keepIn: "3210000원",
         dueDate: "2020-10-10",
         report: "0회",
         freeze: "동결"
@@ -159,7 +163,7 @@ export default function UserTable(props) {
       {
         id: 3,
         nickname: "루치",
-        walletAddress: "0x123awsw123",
+        walletAddress: "0xmarco",
         investment: "100000원",
         keepIn: "1222222원",
         dueDate: "2020-10-10",
@@ -169,9 +173,9 @@ export default function UserTable(props) {
       {
         id: 4,
         nickname: "로디언즈",
-        walletAddress: "0x123awsw123",
-        investment: "100000원",
-        keepIn: "1222222원",
+        walletAddress: "0xfranky",
+        investment: "3210000원",
+        keepIn: "1230000원",
         dueDate: "2020-10-10",
         report: "0회",
         freeze: "동결"
@@ -179,7 +183,7 @@ export default function UserTable(props) {
       {
         id: 5,
         nickname: "조지아",
-        walletAddress: "0x123awsw123",
+        walletAddress: "0xgoodmoring",
         investment: "100000원",
         keepIn: "1222222원",
         dueDate: "2020-10-10",
@@ -189,9 +193,9 @@ export default function UserTable(props) {
       {
         id: 6,
         nickname: "귤",
-        walletAddress: "0x123awsw123",
+        walletAddress: "0xcomputer",
         investment: "100000원",
-        keepIn: "1222222원",
+        keepIn: "3210000원",
         dueDate: "2020-10-10",
         report: "0회",
         freeze: "동결"
@@ -199,9 +203,9 @@ export default function UserTable(props) {
       {
         id: 7,
         nickname: "갤럭시",
-        walletAddress: "0x123awsw123",
+        walletAddress: "0xorange",
         investment: "100000원",
-        keepIn: "1222222원",
+        keepIn: "1230000원",
         dueDate: "2020-10-10",
         report: "0회",
         freeze: "동결"
@@ -209,8 +213,8 @@ export default function UserTable(props) {
       {
         id: 8,
         nickname: "컵",
-        walletAddress: "0x123awsw123",
-        investment: "100000원",
+        walletAddress: "0xhello",
+        investment: "1230000원",
         keepIn: "1222222원",
         dueDate: "2020-10-10",
         report: "0회",
@@ -219,8 +223,118 @@ export default function UserTable(props) {
       {
         id: 9,
         nickname: "노트북",
-        walletAddress: "0x123awsw123",
-        investment: "100000원",
+        walletAddress: "0xcoffe",
+        investment: "3210000원",
+        keepIn: "1222222원",
+        dueDate: "2020-10-10",
+        report: "0회",
+        freeze: "동결"
+      },
+      {
+        id: 9,
+        nickname: "노트북",
+        walletAddress: "0xcoffe",
+        investment: "3210000원",
+        keepIn: "1222222원",
+        dueDate: "2020-10-10",
+        report: "0회",
+        freeze: "동결"
+      },
+      {
+        id: 9,
+        nickname: "노트북",
+        walletAddress: "0xcoffe",
+        investment: "3210000원",
+        keepIn: "1222222원",
+        dueDate: "2020-10-10",
+        report: "0회",
+        freeze: "동결"
+      },
+      {
+        id: 89,
+        nickname: "노트북",
+        walletAddress: "0xcoffe",
+        investment: "3210000원",
+        keepIn: "1222222원",
+        dueDate: "2020-10-10",
+        report: "0회",
+        freeze: "동결"
+      },
+      {
+        id: 49,
+        nickname: "노트북",
+        walletAddress: "0xcoffe",
+        investment: "3210000원",
+        keepIn: "1222222원",
+        dueDate: "2020-10-10",
+        report: "0회",
+        freeze: "동결"
+      },
+      {
+        id: 39,
+        nickname: "노트북",
+        walletAddress: "0xcoffe",
+        investment: "3210000원",
+        keepIn: "1222222원",
+        dueDate: "2020-10-10",
+        report: "0회",
+        freeze: "동결"
+      },
+      {
+        id: 29,
+        nickname: "노트북",
+        walletAddress: "0xcoffe",
+        investment: "3210000원",
+        keepIn: "1222222원",
+        dueDate: "2020-10-10",
+        report: "0회",
+        freeze: "동결"
+      },
+      {
+        id: 15,
+        nickname: "노트북",
+        walletAddress: "0xcoffe",
+        investment: "3210000원",
+        keepIn: "1222222원",
+        dueDate: "2020-10-10",
+        report: "0회",
+        freeze: "동결"
+      },
+      {
+        id: 16,
+        nickname: "노트북",
+        walletAddress: "0xcoffe",
+        investment: "3210000원",
+        keepIn: "1222222원",
+        dueDate: "2020-10-10",
+        report: "0회",
+        freeze: "동결"
+      },
+      {
+        id: 17,
+        nickname: "노트북",
+        walletAddress: "0xcoffe",
+        investment: "3210000원",
+        keepIn: "1222222원",
+        dueDate: "2020-10-10",
+        report: "0회",
+        freeze: "동결"
+      },
+      {
+        id: 18,
+        nickname: "노트북",
+        walletAddress: "0xcoffe",
+        investment: "3210000원",
+        keepIn: "1222222원",
+        dueDate: "2020-10-10",
+        report: "0회",
+        freeze: "동결"
+      },
+      {
+        id: 19,
+        nickname: "노트북",
+        walletAddress: "0xcoffe",
+        investment: "3210000원",
         keepIn: "1222222원",
         dueDate: "2020-10-10",
         report: "0회",
@@ -253,8 +367,9 @@ export default function UserTable(props) {
           columns={state.columns}
           data={state.data} //data={props.data}
           options={{
-            pageSize: 10,
-            pageSizeOptions: [10, 30, 50]
+            pageSize: 10
+            // pageSizeOptions: [10, 30, 50]
+            // search: false
           }}
           onRowClick={(_, rowData) => handleSubmit(rowData)}
           // onRowClick={(event, rowData, togglePanel) => togglePanel()}
