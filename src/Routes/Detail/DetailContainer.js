@@ -36,7 +36,7 @@ const Button = styled.button`
 `;
 
 const myClick = () => {
-  const inputVal = prompt("매출액 관리", "1,000원");
+  const inputVal = prompt("매출액 관리ttt", "1,000원");
   alert(inputVal);
 };
 
