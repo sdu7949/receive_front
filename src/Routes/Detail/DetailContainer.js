@@ -6,6 +6,7 @@ const Container = styled.table`
   padding: 15px;
   background-color: white;
   text-align: center;
+  width: 93%;
 `;
 
 const Header = styled.th`

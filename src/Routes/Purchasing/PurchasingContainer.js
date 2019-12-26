@@ -53,59 +53,25 @@ export default function UserTable(props) {
     columns: [
       {
         title: "닉네임",
-        field: "nickname",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `200px`,
-          paddingLeft: `120px`
-        }
+        field: "nickname"
       },
       {
         title: "지갑 주소",
         field: "walletAddress",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `200px`,
-          paddingLeft: `110px`
-        }
+        searchable: false
       },
       {
         title: "식별 번호",
-        field: "id",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `200px`,
-          paddingLeft: `110px`
-        }
+        field: "id"
       },
       {
         title: "구매 신청 금액",
         field: "purchasingCost",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `200px`,
-          paddingLeft: `90px`
-        },
         searchable: false
       },
       {
         title: "전송 예정 코인",
         field: "transmitCoin",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `200px`,
-          paddingLeft: `90px`
-        },
         searchable: false
       }
       // { title: '승인하기', field: 'approval' },
@@ -214,8 +180,8 @@ export default function UserTable(props) {
         columns={state.columns}
         data={state.data}
         options={{
-          pageSize: 10,
-          pageSizeOptions: [10, 30, 50]
+          pageSize: 20
+          // pageSizeOptions: [10, 30, 50]
         }}
         onRowClick={(_, rowData) => handleSubmit(rowData)}
         // onRowClick={(event, rowData, togglePanel) => togglePanel()}

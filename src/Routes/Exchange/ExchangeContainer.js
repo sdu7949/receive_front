@@ -53,83 +53,35 @@ export default function UserTable(props) {
     columns: [
       {
         title: "닉네임",
-        field: "nickname",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `150px`,
-          paddingLeft: `70px`
-        }
+        field: "nickname"
       },
       {
         title: "식별 번호",
-        field: "id",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `150px`,
-          paddingLeft: `65px`
-        }
+        field: "id"
       },
       {
         title: "환전 신청 코인",
         field: "exchangeCoin",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `200px`,
-          paddingLeft: `80px`
-        }
+        searchable: false
       },
       {
         title: "송금 여부",
         field: "sendMoney",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `150px`,
-          paddingLeft: `65px`
-        },
         searchable: false
       },
       {
         title: "은행",
         field: "bank",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `150px`,
-          paddingLeft: `80px`
-        },
         searchable: false
       },
       {
         title: "계좌번호",
         field: "accountNumber",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `200px`,
-          paddingLeft: `90px`
-        },
         searchable: false
       },
       {
         title: "출금 예정 금액",
         field: "withdrawMoney",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `170px`,
-          paddingLeft: `55px`
-        },
         searchable: false
       }
       // { title: '환전승인', field: 'exchangeApproval' },
@@ -207,8 +159,8 @@ export default function UserTable(props) {
         columns={state.columns}
         data={state.data}
         options={{
-          pageSize: 10,
-          pageSizeOptions: [10, 30, 50]
+          pageSize: 20
+          // pageSizeOptions: [10, 30, 50]
         }}
         onRowClick={(_, rowData) => handleSubmit(rowData)}
         // onRowClick={(event, rowData, togglePanel) => togglePanel()}

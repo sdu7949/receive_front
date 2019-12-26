@@ -53,83 +53,35 @@ export default function UserTable(props) {
     columns: [
       {
         title: "닉네임",
-        field: "nickname",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `150px`,
-          paddingLeft: `75px`
-        }
+        field: "nickname"
       },
       {
         title: "지갑 주소",
         field: "walletAddress",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `150px`,
-          paddingLeft: `67px`
-        }
+        searchable: false
       },
       {
         title: "식별 번호",
-        field: "id",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `150px`,
-          paddingLeft: `67px`
-        }
+        field: "id"
       },
       {
         title: "투자 금액",
         field: "investment",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `150px`,
-          paddingLeft: `65px`
-        },
         searchable: false
       },
       {
         title: "보유 KeepIn",
         field: "keepIn",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `180px`,
-          paddingLeft: `75px`
-        },
         searchable: false
       },
       {
         title: "만기일",
         field: "dueDate",
-        cellStyle: {
-          textAlign: "center"
-        },
-        headerStyle: {
-          width: `160px`,
-          paddingLeft: `80px`
-        },
         searchable: false
       },
       {
         title: "신고 횟수",
         field: "report",
-        cellStyle: {
-          textAlign: `center`
-        },
-        headerStyle: {
-          width: `150px`,
-          paddingLeft: `70px`
-        },
         searchable: false
       }
       //   { title: 'Birth Year', field: 'birthYear', type: 'numeric' }, 오른쪽 정렬
@@ -367,7 +319,7 @@ export default function UserTable(props) {
           columns={state.columns}
           data={state.data} //data={props.data}
           options={{
-            pageSize: 10
+            pageSize: 20
             // pageSizeOptions: [10, 30, 50]
             // search: false
           }}
